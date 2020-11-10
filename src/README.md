@@ -13,3 +13,7 @@
 ## 3 見出し
 
 本文
+
+<img src="./.vuepress/public/ffc3.png">
+
+![](/ffc3.png)
