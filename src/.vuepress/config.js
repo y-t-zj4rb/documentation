@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'ページタイトル', 
-    description: 'ここにディスクリプションのテキスト' ,
+    title: 'Documentation', 
+    description: '参考にしたwebサイト・サービスをまとめました。' ,
     locales: {
       '/': {
         lang: 'ja'
@@ -9,8 +9,9 @@ module.exports = {
     dest: 'docs',
     themeConfig: {
         nav: [
-          { text: 'ほーむ', link: '/' },
-          { text: 'あばうと', link: '/about/' }
+          { text: 'home', link: '/' },
+          { text: 'web', link: '/web/' },
+          { text: 'design', link: '/design/' }
         ],
         sidebar: 'auto',
       },

@@ -1,19 +1,17 @@
-# ああああ
+---
+sidebar: false
+---
 
-## 画像
+# Documentation Home
 
-## 1 見出し
+このページは `Vuepress` というツールで作られました。
 
-本文
+[デザイナーでもわかる Vuepress(Vue.js)](https://qiita.com/taiqi/items/c4632a37d8de36f2f6d0)
 
-## 2 見出し
+## Web
 
-本文
+[web](./web)
 
-## 3 見出し
+## Design
 
-本文
-
-<img src="./.vuepress/public/ffc3.png">
-
-![](/ffc3.png)
+[design](./design)
