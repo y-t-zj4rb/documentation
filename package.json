@@ -7,7 +7,7 @@
     "dev":"vuepress dev src",
     "build":"vuepress build src"
   },
-  "author": "",
+  "author": "Yasuda",
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^1.7.1"

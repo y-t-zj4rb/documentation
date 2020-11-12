@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>sample01</title>
+</head>
+
+<body>
+    <style>
+        .text-wrapper{
+            width:90%;
+            margin:0 auto;
+            max-width:767px;
+        }
+        .sample-wrapper{
+            width:90%;
+            margin:20px auto;
+            max-width:767px;
+            background-color:#f2f2f2;
+        }
+        .header-nav{
+            width:320px;
+            margin:0 auto;
+        }
+        .header-nav ul{
+            display:flex;
+            justify-content: center;
+            background-color: #fefefe;
+            filter:drop-shadow(0 1px 2px #0008);
+            border-radius:20px;
+            list-style-type: none;
+            padding:8px;
+        }
+        .header-nav li{
+            font-weight:bold;
+            color:#444;
+            margin:0 10px;
+        }
+    </style>
+    <div id="app">
+        <div class="text-wrapper">
+            <a href="./">TOPへ</a>
+            <h1>sample01</h1>
+            <h2>複数ページで共通のヘッダーを作って再利用する(コンポーネント)</h2>
+            <p>
+                scriptを別ファイルに記述して(例えばcomponent.jsみたいな名前をつけ)コンポーネントを使いたいページで読み込ませる。
+                このときVue.js自体を読み込むことも忘れずに。
+            </p>
+        </div>
+        <div class="sample-wrapper">
+            <!--コンポーネントを配置-->
+            <header-nav></header-nav>
+            <!--コンポーネントをもう一個配置してみた-->
+            <header-nav></header-nav>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+        // ここからを別ファイルに記述して読み込む
+        Vue.component('header-nav', {
+            // コンポーネントの中身
+            template: `
+                <div class="header-nav">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Works</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            `
+        })
+        var app = new Vue({
+            el: "#app",
+        })
+    </script>
+</html>
