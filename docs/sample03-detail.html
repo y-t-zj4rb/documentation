@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>sample03</title>
+    <meta content="description" name="description">
+</head>
+
+<body>
+    <style>
+        .text-wrapper{
+            width:90%;
+            margin:0 auto;
+            max-width:767px;
+        }
+        .sample-wrapper{
+            width:90%;
+            margin:20px auto;
+            max-width:767px;
+            background-color:#f2f2f2;
+        }
+        li{
+            border-bottom:1px solid #0006;
+        }
+    </style>
+    <div id="app">
+        <div class="text-wrapper">
+            <a href="./sample03.html">一覧へ</a>
+            <h1>sample03(詳細ページ)</h1>
+            <h2></h2>
+            <p>
+            </p>
+        </div>
+        <div class="sample-wrapper">
+            <p><b>{{title}}</b></p>
+            <p v-html="body"></p>
+            <p>{{publishedAt}}</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //URLパラメータからidを取得
+        let id = new URLSearchParams(location.search).get("id");
+
+        fetch(`https://y-t-zj4rb.microcms.io/api/v1/sample/${id}`, {
+          headers: {
+            "X-API-KEY": "da755a34-ebf7-4727-aaec-3484d7bb1f1f"
+          }
+        }).then(response =>  {
+          return response.json();
+        }).then( res => {
+          const app = new Vue({
+            el: '#app',
+            data: res,
+            // 【任意】ページのmeta情報を動的に制御
+            mounted(){
+              const title = res.title + "の詳細ページ|Documentation"
+              const ogUrl = "https://y-t-zj4rb.github.io/documentation/sample03-detail.html" + res.id
+              const description = res.title + "の記事"
+              document.title = title
+              document.querySelector("meta[property='og:title']")
+              　.setAttribute('content', title)
+              document.querySelector("meta[property='og:url']")
+              　.setAttribute('content', ogUrl)
+              document.querySelector("meta[name='description']")
+              　.setAttribute('content', description)
+            }
+          });
+        }).catch(function (error) {
+          console.log(error);
+        });
+    </script>
+</html>

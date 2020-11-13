@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>sample04</title>
+</head>
+
+<body>
+    <style>
+        .text-wrapper{
+            width:90%;
+            margin:0 auto;
+            max-width:767px;
+        }
+        .sample-wrapper{
+            width:90%;
+            margin:20px auto;
+            max-width:767px;
+            background-color:#f2f2f2;
+        }
+        li{
+            border-bottom:1px solid #0006;
+        }
+        .sample-wrapper p{
+            text-align: center;
+        }
+    </style>
+    <div id="app">
+        <div class="text-wrapper">
+            <a href="./">TOPへ</a>
+            <h1>sample04</h1>
+            <h2>日時の表記</h2>
+            <p>microCMSから時刻を引っ張ってくるとUTCというフォーマットで日時が表示されます。
+                <br>簡易な方法であれば
+                <br>1. ●●文字目を切り取る
+                <br>2. -を/に置き換える
+                <br>という手順で表示できます。
+            </p>
+            <p>時刻まで合わせたい場合は下記参照</p>
+            <a href="https://qiita.com/sennninn6/items/3174820b1c8b8c5ba4f7">JavaScriptでUTCを9時間足して簡単にJSTの時刻へ変換させる</a>
+        </div>
+        <div class="sample-wrapper">
+            <ul>
+              <li v-for="item in news" :key="item.title">
+                  {{item.publishedAt}}
+              </li>
+            </ul>
+            <p>↓</p>
+            <ul>
+              <li v-for="item in news" :key="item.title">
+                  {{item.publishedAt.substr( 0, 10 )}}
+              </li>
+            </ul>
+            <p>↓</p>
+            <ul>
+              <li v-for="item in news" :key="item.title">
+                  {{item.publishedAt.substr( 0, 10 ).replace(/-/g,"/")}}
+              </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                news:[],
+            },
+            mounted () {
+                axios
+                .get('https://y-t-zj4rb.microcms.io/api/v1/sample',{
+                    headers: {"X-API-KEY": "da755a34-ebf7-4727-aaec-3484d7bb1f1f"}
+                })
+                .then(response => (this.news = response.data.contents))
+                .catch(error => {
+                    console.log(error)
+                    this.errored = true
+                })
+                .finally(() => this.loading = false)
+            },
+        });
+    </script>
+</html>
