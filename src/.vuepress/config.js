@@ -1,6 +1,6 @@
 module.exports = {
     title: 'Documentation', 
-    description: '参考にしたwebサイト・サービスをまとめました。' ,
+    description: '参考にしたwebサイト・サービスをまとめました。サンプルも載せています。' ,
     locales: {
       '/': {
         lang: 'ja'

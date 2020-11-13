@@ -28,6 +28,21 @@
 
 ---
 
+## サンプル
+
+[複数ページで共通のヘッダーを作って再利用する(コンポーネント)](https://y-t-zj4rb.github.io/documentation/sample01.html)
+<br>コンポーネント化のメリットはソースがすっきりする、メンテナンス性が向上する等。
+
+[API を取得してリスト表示する](https://y-t-zj4rb.github.io/documentation/sample02.html)
+<br>お知らせや記事一覧
+
+[API を取得してコンテンツを表示する](https://y-t-zj4rb.github.io/documentation/sample03.html)
+<br>記事本文・詳細ページ
+
+[日時の表記](https://y-t-zj4rb.github.io/documentation/sample04.html)
+
+---
+
 ## 外部リンク
 
 #### Vue.js
@@ -172,25 +187,10 @@ ServerName www.example.com:4433
 <br>`Node.js`自体を理解する必要はないが、以下のフレームワークを使用するためにはインストールしておきたいです。
 
 [デザイナーでもわかる Vuepress(Vue.js)](https://qiita.com/taiqi/items/c4632a37d8de36f2f6d0)
-<br>この web ドキュメントは`Vuepress`を用いて作成しました。名前に Vue とついていますが Vue の知識が無くても使えます。
+<br>この web ドキュメントは`Vuepress`を用いて作成しました。目次やサイドバーなどを簡単に実装できます。名前に Vue とついていますが Vue の知識が無くても使えます。
 
 [【Nuxt.js】Vue.js をより効果的に使えるフレームワークのメリットや利用シーンを紹介！](https://udemy.benesse.co.jp/development/system/nuxt-js.html)
 <br>大・中規模以上のサイト向け
 
 [【Ch.1】 Nuxt とは？動かして理解する【Nuxt de Portfolio】](https://liginc.co.jp/449551)
 <br>Nuxt.js のチュートリアル
-
-## サンプル
-
-[複数ページで共通のヘッダーを作って再利用する(コンポーネント)](https://y-t-zj4rb.github.io/documentation/sample01.html)
-<br>コンポーネント化のメリットはソースがすっきりする、メンテナンス性が向上する等。
-
-[API を取得してリスト表示する](https://y-t-zj4rb.github.io/documentation/sample02.html)
-<br>お知らせや記事一覧
-
-[API を取得してコンテンツを表示する](https://y-t-zj4rb.github.io/documentation/sample03.html)
-<br>記事本文・詳細ページ
-
-[日時の表記](https://y-t-zj4rb.github.io/documentation/sample04.html)
-
----
