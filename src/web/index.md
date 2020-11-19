@@ -39,6 +39,9 @@
 [API を取得してコンテンツを表示する](https://y-t-zj4rb.github.io/documentation/sample03.html)
 <br>記事本文・詳細ページ
 
+[リストにフィルターやソート機能を付ける]()
+<br>日付順や名前順などで並べ替えたり
+
 [日時の表記](https://y-t-zj4rb.github.io/documentation/sample04.html)
 
 ---
@@ -47,8 +50,10 @@
 
 #### Vue.js
 
+::: tip Vue.js
 `Vue.js` は `jQuery` のように使える `js` ベースのライブラリです。
 大規模な web ページ・アプリにおいては `jQuery` よりも有効です。
+:::
 
 [Vue.js でできること 8 選](https://goworkship.com/magazine/vuejs-framework-snippets/)
 <br>実用的ではないが、なんとなく Vue の雰囲気をつかむ。
@@ -58,6 +63,8 @@
 
 [基礎から学ぶ Vue.js 書籍用サポートページ](https://cr-vue.mio3io.com/guide/chapter1.html)
 <br>学習用。公式とほぼ同じ内容。
+
+[jQuery でよく使う動きを Vue.js でやってみる](https://qiita.com/g-taguchi/items/9f97f2172aa048934f1c)
 
 [Vue.js でカルーセルスライダーを使うなら「hooper」が良さげ](https://www.kabanoki.net/3989/)
 <br>API(後述)を使用している場合、普通のスライダー系ライブラリは上手く動作しない。この`hooper`は上手くいった。
@@ -72,12 +79,19 @@
 
 [Vue.js で jQuery と共存させる方法](https://qiita.com/g-taguchi/items/15b2f5392f5556ac5a70)
 
+[Vue.js の v-for でネスト(入れ子)したい](https://qiita.com/kanasann1106/items/bc31acc8ddf4a262c527)
+<br>くさ(フシギダネ、フシギソウ、フシギバナ)、
+<br>ほのお(ヒトカゲ、リザード、リザードン)、
+<br>みず(ゼニガメ、カメール、カメックス)・・・といった入れ子構造のデータをずらっと並べる
+
 #### CMS・API
 
+::: tip ヘッドレス CMS
 ニュース・ブログのように定期・長期的に更新する要素がある場合は CMS 化すると便利です。ヘッドレス CMS と呼ばれるサービスで、日本語で利用できる microCMS がオススメです。以下のようなメリットがあります。
 
 - ソースコードをいじらず GUI で更新ができる
 - HTML を上げなおさなくてよい
+  :::
 
 [microCMS のはじめ方](https://microcms.io/blog/getting-started)
 
@@ -92,6 +106,7 @@
 
 #### Git
 
+::: tip Git
 Git はバージョン管理ツールです。できることは主に、
 
 - 修正の度に、もしくはバージョンごとにバックアップが取れる
@@ -99,6 +114,7 @@ Git はバージョン管理ツールです。できることは主に、
 - 複数人での開発の際に競合を回避できる
 
 ランディングページや小規模サイトであれば基本必要ないです。
+:::
 
 [Git 以外にも実はある！バージョン管理システムについて基礎から解説！](https://www.atoone.co.jp/column/10278/)
 
@@ -113,7 +129,9 @@ Git はバージョン管理ツールです。できることは主に、
 
 #### PHP
 
+::: tip PHP
 `PHP` はサーバーサイドの言語のためサーバー上でしか正常に動作しません。サーバーにアップするまで確認できないのは非効率なため、ローカルでサーバーを立ち上げるための環境を構築する必要があります。
+:::
 
 [Visual Studio Code で XAMPP の PHP コーディング環境を作る](https://qiita.com/hitotch/items/ab791fbc11a4e2a6cefd)
 <br>`PHP` の環境構築

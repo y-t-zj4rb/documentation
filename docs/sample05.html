@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>sample05</title>
+</head>
+
+<body>
+    <style>
+        .text-wrapper{
+            width:90%;
+            margin:0 auto;
+            max-width:767px;
+        }
+        .sample-wrapper{
+            width:90%;
+            margin:20px auto;
+            max-width:767px;
+            background-color:#f2f2f2;
+        }
+        li{
+            border-bottom:1px solid #0006;
+        }
+    </style>
+    <div id="app">
+        <div class="text-wrapper">
+            <a href="./">TOPへ</a>
+            <h1>sample03(一覧ページ)</h1>
+            <h2>API を取得してコンテンツを表示する</h2>
+            <p>
+                sample02とほぼ同じですが、こちらは詳細ページに飛ぶことができます。
+            </p>
+        </div>
+        <div class="sample-wrapper">
+          <ul>
+            <li v-for="item in news" :key="item.title">
+                    <p><b>{{item.title}}</b></p>
+                    <p>{{item.publishedAt}}</p>
+                    <a :href=`sample03-detail.html?id=${item.id}` class="data-wrapper">
+                        詳細はコチラ
+                    </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                news:[],
+            },
+            mounted () {
+                axios
+                // microCMS側でAPIキーを取得する
+                .get('https://y-t-zj4rb.microcms.io/api/v1/sample',{
+                    headers: {"X-API-KEY": "da755a34-ebf7-4727-aaec-3484d7bb1f1f"}
+                })
+                .then(response => (this.news = response.data.contents))
+                .catch(error => {
+                    console.log(error)
+                    this.errored = true
+                })
+                .finally(() => this.loading = false)
+            },
+        });
+    </script>
+</html>

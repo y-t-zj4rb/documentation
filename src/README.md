@@ -12,9 +12,9 @@ sidebar: false
 
 [web](./web)
 
-#### Design
+#### Tips
 
-[design](./design)
+[tips](./tips)
 
 ---
 
